@@ -133,3 +133,17 @@ If asynchronous tasks need to be run, then Watch property needs to be used. Runs
 For events, replace **v-on:** with **@**.
 
 For element attributes, replace **v-bind:** with **:**. Just take out the v-bind part.
+
+
+
+## Wrapping Up - Resources & Useful Links
+
+Official Docs - Getting Started: <a href="http://vuejs.org/guide/">http://vuejs.org/guide/</a>
+
+Official Docs - Template Syntax: <a href="http://vuejs.org/guide/syntax.html">http://vuejs.org/guide/syntax.html</a>
+
+Official Docs - Events: <a href="http://vuejs.org/guide/events.html">http://vuejs.org/guide/events.html</a>
+
+Official Docs - Computed Properties & Watchers: <a href="http://vuejs.org/guide/computed.html">http://vuejs.org/guide/computed.html</a>
+
+Official Docs - Class & Style Binding: <a href="http://vuejs.org/guide/class-and-style.html">http://vuejs.org/guide/class-and-style.html</a>
