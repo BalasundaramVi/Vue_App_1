@@ -35,7 +35,7 @@ A Guide to Getting Started with Vue JS 2
 
 ### Section 20: Roundup
 
-
+<hr>
 
 *NOTE: Most of the information for this guide comes from Maximilian Schwarzmuller's Vue JS2 Course on Udemy. If you want to learn more I highly encourage you to go check it out, and use this guide as a reference afterward.*
 
