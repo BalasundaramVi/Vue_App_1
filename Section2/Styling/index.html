@@ -2,16 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+  <link rel="stylesheet" href="styles.css">
   <title>STYLING PRACTICE</title>
 </head>
 <body>
   <div id="app">
-    <div class="demo"></div>
-    <div class="demo"></div>
-    <div class="demo"></div>
+    <div class="demo" @click="attachRed = !attachRed" :class="divClasses"></div>
+    <div class="demo" :class="{red: attachRed}"></div>
+    <div class="demo" :class="[color, {red: attachRed}]"></div>
+    <hr>
+    <input type="text" v-model="color">
   </div>
+  <script src="./main.js"></script>
 </body>
 </html>
