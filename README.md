@@ -1,6 +1,5 @@
-# Vue_App_1
-Framework design for Vue JS 2
-
+# Vue JS 2
+A Guide to Getting Started with Vue JS 2
 
 ### Section 1: Getting Started
 
