@@ -97,3 +97,39 @@ Mixture of HTML and Javascript code as long as you use template expressions.
 
 **v-model** tells VueJS to set up two way data binding.
 Both update the field and also reflect the change. Great for input fields. Use not a function but a data property for the bind.
+
+
+## Reacting to Changes with Computed Properties
+
+Data property is not reactive.
+
+**Known Options For Vue Instance**
+- el:       Connect to DOM
+- data:     Store Data to be used
+- methods:  Methods of this Vue instance
+- computed: dependent properties
+- watch:    Execute code upon data changes
+
+Use computed option like a property stored in data object, even though it is written like a function in the Vue instance.
+
+Computed properties only update when the data that affects them change. It is the best way to do it because we are caching the result - we are not recalculating the result.
+
+Only use methods if we know we are not caching the result. DOM needs to be re-updated every time. *Most of the time you will use computed properties.*
+
+It is best practice to use computed properties everywhere you can.
+
+Computed properties won't work when asynchronous tasks need to be run - computed properties need to be synchronous.
+
+
+
+## An Alternative to Computed Properties: Watching for Changes
+
+If asynchronous tasks need to be run, then Watch property needs to be used. Runs every time the key is changed.
+
+
+
+## Saving Time with Shorthands
+
+For events, replace **v-on:** with **@**.
+
+For element attributes, replace **v-bind:** with **:**. Just take out the v-bind part.

@@ -2,21 +2,25 @@ new Vue({
   el: '#app',
   data: {
     counter: 0,
-    x: 0,
-    y: 0,
+    secondCounter: 0,
+  },
+  computed: {
+    output: function() {
+      return this.counter > 5 ? 'Greater 5' : 'Smaller than 5';
+
+    }
+  },
+  watch: {
+    counter: function(value) {
+      var vm = this;
+      setTimeout(function() {
+        vm.counter = 0;
+      }, 2000)
+    }
   },
   methods: {
-    increase: function(step, event) {
-      this.counter += step;
-    },
-
-    updateCoordinates: function(e) {
-      this.x = e.clientX;
-      this.y = e.clientY;
-    },
-
-    alertMe: function() {
-      alert('Alert!');
+    result: function() {
+      return this.counter > 5 ? 'Greater 5' : 'Smaller than 5';
     }
   }
 });
