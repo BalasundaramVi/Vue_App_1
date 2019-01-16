@@ -78,3 +78,11 @@ Use **v-on:** to add event handlers mapped to functions on html elements.
 Event handlers get automatically passed into the function in Vue methods.
 
 Using **$event** (a protected name) you can also get event handlers passed into your functions.
+
+Use Event Modifiers to modify an event. For example **.stop** stops Propogation to higher functions.
+
+Vue has an intermediate function from your function to the time your function is expressed. It also runs preventDefault, which can be chained with one **.** after another.
+
+
+
+## Listening to Keyboard Events

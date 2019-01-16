@@ -13,6 +13,10 @@ new Vue({
     updateCoordinates: function(e) {
       this.x = e.clientX;
       this.y = e.clientY;
+    },
+
+    alertMe: function() {
+      alert('Alert!');
     }
   }
 });
