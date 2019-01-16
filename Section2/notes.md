@@ -64,3 +64,17 @@ By default VueJS **escapes HTML**. Only renders text.
 
 Instead, if you want to render raw HTML, use **v-html**.
 However, this does expose you to cross-site DDOS, HTML attacks.
+
+
+
+## Listening to Events
+
+Use **v-on:** to add event handlers mapped to functions on html elements.
+
+
+
+## Getting Event Data from the Event Object
+
+Event handlers get automatically passed into the function in Vue methods.
+
+Using **$event** (a protected name) you can also get event handlers passed into your functions.
