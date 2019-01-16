@@ -85,4 +85,15 @@ Vue has an intermediate function from your function to the time your function is
 
 
 
-## Listening to Keyboard Events
+## Writing JavaScript Code in the Templates
+
+*In all the places where you can access the vue instance, any valid javascript code can be written as long as it is one expression and not if, for-loop, while-loop, etc.*
+
+Mixture of HTML and Javascript code as long as you use template expressions.
+
+
+
+## Using Two Way Binding
+
+**v-model** tells VueJS to set up two way data binding.
+Both update the field and also reflect the change. Great for input fields. Use not a function but a data property for the bind.
