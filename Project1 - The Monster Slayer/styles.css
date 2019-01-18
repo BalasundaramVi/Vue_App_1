@@ -1,0 +1,39 @@
+.app {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  margin: 25px;
+}
+
+.healthbar {
+  width: 90%;
+  min-width: 400px;
+  height: 25px;
+  border: 2px solid black;
+}
+
+.healthpoints {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: green;
+  text-align: center;
+  height: 100%;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 45%;
+}
+
+.name {
+  margin: 10px;
+}

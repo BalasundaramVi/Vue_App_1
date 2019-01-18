@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <title>Monster Slayer</title>
+</head>
+<body>
+  <div id="app">
+    <div class="header">
+      <div class="player-info info">
+        <h3 class="name">YOU</h3>
+        <div class="healthbar">
+          <div class="healthpoints" :style="playerBarWidth">{{ player.health }}</div>
+        </div>
+      </div>
+      <div class="monster-info info">
+        <h3 class="name">MONSTER</h3>
+        <div class="healthbar">
+          <div class="healthpoints" :style="monsterBarWidth">{{ monster.health }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
