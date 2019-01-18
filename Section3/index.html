@@ -2,13 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
   <title>Conditionals</title>
 </head>
 <body>
   <div id="app">
-    <p>You can see me!</p>
+    <p v-if="show">You can see me!</p>
+    <p v-else>Now you see me!</p>
     <p>Do you also see me?</p>
+    <template v-if="show">
+      <h1>Heading</h1>
+      <p>Inside a template!</p>
+    </template>
+    <button @click="show=!show">Switch</button>
   </div>
-  <script src="main.js"></script>
+  <script src="./main.js"></script>
 </body>
 </html>
