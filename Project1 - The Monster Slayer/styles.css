@@ -37,3 +37,15 @@
 .name {
   margin: 10px;
 }
+
+.select {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid grey;
+  margin: auto;
+  width: 90%;
+  min-width: 850px;
+  max-width: 1500px;
+  height: 40px;
+}

@@ -6,7 +6,8 @@ new Vue({
     },
     monster: {
       health: 100,
-    }
+    },
+    gameOver: true,
   },
   computed: {
     playerBarWidth: function() {

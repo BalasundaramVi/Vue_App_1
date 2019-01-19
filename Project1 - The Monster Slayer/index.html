@@ -22,6 +22,17 @@
         </div>
       </div>
     </div>
+    <div class="options">
+      <div v-if="!gameOver" class="player-moves select">
+        <div class="attack move">ATTACK</div>
+        <div class="special-attack move">SPECIAL ATTACK</div>
+        <div class="heal move">HEAL</div>
+        <div class="give-up move">GIVE UP</div>
+      </div>
+      <div v-else class="start-game select">
+        <div class="newGame move">NEW GAME</div>
+      </div>
+    </div>
   </div>
   <script src="main.js"></script>
 </body>
