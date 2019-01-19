@@ -30,8 +30,11 @@
         <div class="give-up move">GIVE UP</div>
       </div>
       <div v-else class="start-game select">
-        <div class="newGame move">NEW GAME</div>
+        <div class="newGame move" @click="gameOver = !gameOver">NEW GAME</div>
       </div>
+    </div>
+    <div v-if="gameLog.length !== 0" class="game-log">
+      <div v-for="(move, index) in gameLog" class="move-log" :class="move.type" :key="index">{{ move.description }}</div>
     </div>
   </div>
   <script src="main.js"></script>

@@ -8,6 +8,7 @@ new Vue({
       health: 100,
     },
     gameOver: true,
+    gameLog: [{ description: 'Hello World', type: 'player-move' }, { description: 'Hello World', type: 'monster-move' }],
   },
   computed: {
     playerBarWidth: function() {
@@ -20,6 +21,6 @@ new Vue({
       return {
         width: (this.monster.health.toString() + '%'),
       }
-    }
+    },
   }
 })
