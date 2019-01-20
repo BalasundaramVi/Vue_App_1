@@ -30,30 +30,71 @@ new Vue({
     normalAttack: function() {
       let power = Math.floor(Math.random() * 20);
       this.monster.health -= power;
+      let win = false;
+      if (this.monster.health <= 0) {
+        this.monster.health = 0;
+        this.gameOver = true;
+        win = true;
+      }
+
       this.gameLog.push({
         description: `Player attacks monster for ${power} damage!`,
         type: 'player-move',
       })
-      this.monsterAttack();
+
+      if (win) {
+        this.gameLog.push({
+          description: 'PLAYER WINS!',
+          type: 'player-move'
+        })
+      } else {
+        this.monsterAttack();
+      }
     },
 
     specialAttack: function() {
       let power = Math.floor(Math.random() * 50);
       this.monster.health -= power;
+      let win = false;
+      if (this.monster.health <= 0) {
+        this.monster.health = 0;
+        this.gameOver = true;
+        win = true;
+      }
       this.gameLog.push({
         description: `Player uses special attack on monsterfor ${power} damage!`,
         type: 'player-move',
       })
-      this.monsterAttack();
+      if (win) {
+        this.gameLog.push({
+          description: 'PLAYER WINS!',
+          type: 'player-move'
+        })
+      } else {
+        this.monsterAttack();
+      }
     },
 
     monsterAttack: function()  {
       let power = Math.floor(Math.random() * 20);
       this.player.health -= power;
+      let win = false;
+      if (this.monster.health <= 0) {
+        this.monster.health = 0;
+        this.gameOver = true;
+        win = true;
+      };
+      this.gameLog.push({
+        description: `Monster attacks player for ${power} damage!`,
+        type: 'monster-move',
+      });
+
+      if (win) {
         this.gameLog.push({
-          description: `Monster attacks player for ${power} damage!`,
+          description: 'MONSTER WINS :(',
           type: 'monster-move',
         })
+      }
     },
 
     heal: function() {
@@ -64,6 +105,13 @@ new Vue({
         type: 'player-move',
       });
       this.monsterAttack();
+    },
+
+    newGame: function() {
+      this.player.health = 100;
+      this.monster.health = 100;
+      this.gameOver = false;
+      this.gameLog = [];
     }
   }
 });

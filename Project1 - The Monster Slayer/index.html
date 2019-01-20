@@ -12,13 +12,13 @@
       <div class="player-info info">
         <h3 class="name">YOU</h3>
         <div class="healthbar">
-          <div class="healthpoints" :style="playerBarWidth">{{ player.health }}</div>
+          <div class="healthpoints" :style="playerBarWidth">{{ player.health > 0 ? player.health : '' }}</div>
         </div>
       </div>
       <div class="monster-info info">
         <h3 class="name">MONSTER</h3>
         <div class="healthbar">
-          <div class="healthpoints" :style="monsterBarWidth">{{ monster.health }}</div>
+          <div class="healthpoints" :style="monsterBarWidth">{{ monster.health > 0 ? monster.health : '' }}</div>
         </div>
       </div>
     </div>
@@ -30,7 +30,7 @@
         <div class="give-up move" @click="gameOver=true">GIVE UP</div>
       </div>
       <div v-else class="start-game select">
-        <div class="newGame move" @click="gameOver=!gameOver">NEW GAME</div>
+        <div class="newGame move" @click="newGame">NEW GAME</div>
       </div>
     </div>
     <div v-if="gameLog.length !== 0" class="game-log">
