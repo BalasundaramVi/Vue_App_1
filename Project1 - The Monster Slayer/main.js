@@ -17,10 +17,27 @@ new Vue({
       }
     },
 
-    monsterBarWidth: function() {
-      return {
-        width: (this.monster.health.toString() + '%'),
-      }
-    },
+    // monsterBarWidth: function() {
+    //   return {
+    //     width: (this.monster.health.toString() + '%'),
+    //   }
+    // },
+
+    // normalAttack: function() {
+    //   let power = Math.floor(Math.random() * 20);
+    //   this.monster.health -= power;
+    //   this.monsterAttack();
+    // },
+
+    // specialAttack: function() {
+    //   let power = Math.floor(Math.random() * 50);
+    //   this.monster.health -= power;
+    //   this.monsterAttack();
+    // },
+
+    // monsterAttack: function()  {
+    //   let power = Math.floor(Math.random() * 20);
+    //   this.player.health -= power;
+    // },
   }
-})
+});

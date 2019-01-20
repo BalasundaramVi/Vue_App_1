@@ -24,13 +24,13 @@
     </div>
     <div class="options">
       <div v-if="!gameOver" class="player-moves select">
-        <div class="attack move">ATTACK</div>
-        <div class="special-attack move">SPECIAL ATTACK</div>
+        <div class="attack move" @click="normalAttack">ATTACK</div>
+        <div class="special-attack move" @click="specialAttack">SPECIAL ATTACK</div>
         <div class="heal move">HEAL</div>
         <div class="give-up move">GIVE UP</div>
       </div>
       <div v-else class="start-game select">
-        <div class="newGame move" @click="gameOver = !gameOver">NEW GAME</div>
+        <div class="newGame move" @click="gameOver=!gameOver">NEW GAME</div>
       </div>
     </div>
     <div v-if="gameLog.length !== 0" class="game-log">
