@@ -26,8 +26,8 @@
       <div v-if="!gameOver" class="player-moves select">
         <div class="attack move" @click="normalAttack">ATTACK</div>
         <div class="special-attack move" @click="specialAttack">SPECIAL ATTACK</div>
-        <div class="heal move">HEAL</div>
-        <div class="give-up move">GIVE UP</div>
+        <div class="heal move" @click="heal">HEAL</div>
+        <div class="give-up move" @click="gameOver=true">GIVE UP</div>
       </div>
       <div v-else class="start-game select">
         <div class="newGame move" @click="gameOver=!gameOver">NEW GAME</div>
