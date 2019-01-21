@@ -79,8 +79,8 @@ new Vue({
       let power = Math.floor(Math.random() * 20);
       this.player.health -= power;
       let win = false;
-      if (this.monster.health <= 0) {
-        this.monster.health = 0;
+      if (this.player.health <= 0) {
+        this.player.health = 0;
         this.gameOver = true;
         win = true;
       };
