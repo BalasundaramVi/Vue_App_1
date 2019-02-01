@@ -120,3 +120,5 @@ a {
 }
 </style>
 ```
+
+>vue-cli-2 made with vue init webpack so feature-rich. Browse around it to see all the capabilites of vue init
