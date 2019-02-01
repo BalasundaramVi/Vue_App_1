@@ -273,3 +273,8 @@ new Vue({
   }
 });
 ```
+
+
+### Useful Links
+
+Official Docs - The Vue Instance: <a href="http://vuejs.org/guide/instance.html">http://vuejs.org/guide/instance.html</a>
