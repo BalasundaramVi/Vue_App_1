@@ -8,6 +8,7 @@ const favicon = require('serve-favicon');
 const app = express();
 
 app.use(express.static(path.resolve(__dirname, '../client/public')));
+app.use(favicon(path.resolve(__dirname, '../client/assets/logo.png')));
 
 app.use(parser.json());
 app.use(morgan('dev'));
