@@ -85,3 +85,38 @@ vm1.newProp = 'New!';
 It will create a new property but VueJS will not watch it because it was not passed in through the constructor.
 
 VueJS uses `get` and `set` to understand when the user accesses a property or gets a value from it.
+
+
+### A Closer Look at $el and $data
+
+**$el** refers to the HTML code of the element.
+
+**$data** is a data is an object that holds the data properties. This is another way of accessing the data from outside.
+
+```
+console.log(vm1.title);
+console.log(vm1.$data.title);
+```
+
+Both console logs are equivalent.
+
+> VueJS doesn't create its own enclosed world. It is normal JavaScript code, it lives in JavaScript code, and it is able to interact with JavaScript code around it.
+
+Generally there is nothing wrong with mixing vanilla JS and VueJS.
+
+
+### Placing $refs and Using them on your Templates
+
+**ref** is not a directive - it is not using v-bind so no colon in front. It is a key recognized by VueJS on any HTML element.
+
+Use refs to access HTML elements.
+
+```
+vm1.$refs.heading.innerText = 'Something else';
+```
+
+Generally VueJS takes HTML code it controls and creates a template based on that HTML code. Whenever VueJS rerenders the DOM, it takes its old template and rerenders the DOM based on its old template.
+
+Be aware that `ref` is not reactive - so changes may be overwritten.
+
+`ref`s are better used to *get* the value of something.
