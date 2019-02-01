@@ -29,4 +29,29 @@ Call **Vue.component** registers the component globally.
 
 To register locally, store the component as a variable and then pass into Vue instance through the component property.
 
-### Using Components
+### How to Name your Component Tags
+
+Components can be named camelCase.
+
+```
+export default {
+  components: {
+    'appheader': Header,
+    'app-servers': Servers,
+  }
+}
+```
+
+### Scoping Component Styles
+
+Just change <style></style> to <style scoped></style> to contain styles applied in a single file to the HTML template of vue page.
+
+Imitates the shadow DOM.
+
+Basically adds a selector to the element and the style so the shadow dom knows which one to apply the style to.
+
+### Useful Links
+
+VueJS Components: <a href="http://vuejs.org/guide/components.html">http://vuejs.org/guide/components.html</a>
+
+Also see: <a href="https://vuejs.org/v2/guide/components-registration.html">https://vuejs.org/v2/guide/components-registration.html</a>
