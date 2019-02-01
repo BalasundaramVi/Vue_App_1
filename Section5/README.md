@@ -122,6 +122,7 @@ Be aware that `ref` is not reactive - so changes may be overwritten.
 `ref`s are better used to *get* the value of something.
 
 
+
 ## Templates and Components
 
 
@@ -176,3 +177,99 @@ Vue.component('hello', {
 Basically tell VueJS to replace every `<hello></hello>` element with the template we provide in the above component.
 
 This is better than only replacing the first occurence, and not all occurences.
+
+
+### Limitations of some Templates
+
+VueJS without a compiler strips the compiler out, and compiles the template during the build process and executes only compiled JavaScript code. The precompiled version is smaller and faster.
+
+
+### How VueJS Updates the DOM
+
+The Vue instance creates and holds a template from the HTML code or with the template property.
+
+Each data property has its own watcher, which VueJS uses to watch and update these properties.
+
+Accessing the DOM takes the most performance -- is very slow.
+
+> However, it's not constantly updating things in the real DOM, instead VueJS has a virtual DOM parsed in JavaScript which is very quick. The Virtual DOM is recreated, finds the difference, and then updates the real DOM. Knows which properties changed and which properties need updating in the real DOM. Since the virtual DOM is also updated, it has the newest copy of the DOM without the performance slow down.
+
+
+### The VueJS Instance Lifecycle
+
+1. The `new Vue()` constructor.
+    - First lifecycle method: `beforeCreate()`
+2. Initialize Data and Events
+3. Instance Created
+    - Second lifecycle method: `created()`
+4. Compiles template or **el**'s template
+    - Third lifecycle method: `beforeMount()`
+5. Replace **el** with compiled template
+6. Mounted to DOM
+
+Ongoing LifeCycle Methods:
+
+- Data Changed?
+    - `beforeUpdate()`
+- Re-render DOM
+    - `updated()`
+- Destroyed
+    - `beforeDestroy()`
+    - `destroyed()`
+
+
+### The VueJS Instance Lifecycle in Practice
+
+```
+<div id="app">
+  <h1>{{ title }}</h1>
+  <button @click="title = 'Changed'">Update Title</button>
+  <button @click="destroy">Destroy</button>
+</div>
+
+
+new Vue({
+  el: '#app',
+  data: {
+    title: 'The VueJS Instance'
+  },
+
+  beforeCreate: function() {
+    console.log('beforeCreate()');
+  },
+
+  created: function() {
+    console.log('created()');
+  },
+
+  beforeMount: function() {
+    console.log('beforeMount()');
+  },
+
+  mounted: function() {
+    console.log('mounted()');
+  },
+
+  beforeUpdate: function() {
+    console.log('beforeUpdate()');
+  },
+
+  updated: function() {
+    console.log('updated()');
+  },
+
+  beforeDestroy: function() {
+    console.log('beforeDestroy()');
+  },
+
+  destroyed: function() {
+    console.log('destroyed()');
+  },
+
+  methods: {
+    destroy: function() {
+      this.$destroy();
+    }
+  }
+});
+```
