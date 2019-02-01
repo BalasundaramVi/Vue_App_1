@@ -120,3 +120,59 @@ Generally VueJS takes HTML code it controls and creates a template based on that
 Be aware that `ref` is not reactive - so changes may be overwritten.
 
 `ref`s are better used to *get* the value of something.
+
+
+## Templates and Components
+
+
+### Mounting a Template
+
+The properties prefixed with **$** are the native VueJS properties.
+
+```
+vm1.$mount('#app1');
+```
+
+is the same as
+```
+new Vue({
+  el: '#app',
+})
+```
+
+The only difference is syntax. Behind the scenes is the same.
+
+
+Setting up a template and then mounting it to the DOM:
+```
+var vm3 = new Vue({
+  template: '<h1>Hello!</h1>'
+});
+
+vm3.$mount('#app3')
+```
+Or
+```
+vm3.$mount();
+document.getElementById('app3').appendChild(vm3.$el);
+```
+
+Though setting it up like this is pretty uncommon because you can just use components instead.
+
+
+### Using Components
+
+Vue.component takes two arguments.
+1. The selector of the component
+2. A JavaScript object similar to the Vue Instance (data is used differently)
+
+Creating a reusable component:
+```
+Vue.component('hello', {
+  template: '<h1>Hello!</h1>'
+});
+```
+
+Basically tell VueJS to replace every `<hello></hello>` element with the template we provide in the above component.
+
+This is better than only replacing the first occurence, and not all occurences.
