@@ -122,3 +122,88 @@ a {
 ```
 
 >vue-cli-2 made with vue init webpack so feature-rich. Browse around it to see all the capabilites of vue init
+
+
+### Understanding the Object in the Vue File
+
+Exporting the Vue object is the Vue instance. Basically a component.
+
+Has the same properties as a regular Vue instance (but data is special property).
+
+
+### How to build your App for Production
+
+**npm run build** builds for production. Including bundle and optimization.
+
+#### Vue files are single template files.
+
+
+### Useful Links
+
+More about ".vue" files: <a href="http://vuejs.org/guide/single-file-components.html">http://vuejs.org/guide/single-file-components.html</a>
+
+More about the `render()` method: <a href="http://vuejs.org/guide/render-function.html">http://vuejs.org/guide/render-function.html</a>
+
+**Using the ES6 Spread Operator** (for that, you need to add babel-preset-stage-2 as a Dependency and to your .babelrc File):
+
+`npm install --save-dev babel-preset-stage-2`
+
+.babelrc:
+```
+{
+  "presets": [
+    ["es2015", { "modules": false }],
+    ["stage-2"]
+  ]
+}
+```
+js file:
+```
+import Vue from 'vue'
+import App from './App.vue'
+ 
+new Vue({
+  el: '#app',
+  ...App
+});
+```
+
+
+**Using `mount()`:**
+
+Also install the stage-2 preset as described above.
+
+```
+import Vue from 'vue'
+import App from './App.vue'
+ 
+const vm = new Vue({
+  ...App
+});
+ 
+vm.$mount('#app');
+```
+
+Learn more aobut the CLI here: <a href="https://github.com/vuejs/vue-cli">https://github.com/vuejs/vue-cli</a>
+
+The **webpack-simple** template **doesn't support local CSS or Sass files** because no CSS loader is set up.
+
+Use the **webpack** template (not webpack-simple) to get this functionality: <a href="https://github.com/vuejs-templates/webpack">https://github.com/vuejs-templates/webpack</a>
+
+Alternatively, you can also take a look at vue-cli-2 to get an idea of what the basic file structure for the webpack template will be.
+
+
+### Debugging VueJS Projects
+
+There are two main tools you may use:
+
+1. The Developer Tools in Chrome
+2. The Vue Developer Tools(<a href="https://github.com/vuejs/vue-devtools">https://github.com/vuejs/vue-devtools</a>)
+
+When working with a Project created by the CLI (using Webpack!), you can easily debug your running Application by opening your **Developer Tools** and going to **"Sources"** there.
+
+You should see a **"Webpack"** folder which you may open to see all your files included in the project.
+
+You can open any file there and set breakpoints, etc. to debug your running application.
+
+<img src="https://udemy-images.s3.amazonaws.com/redactor/2016-11-02_10-10-13-e40864043d089c76b6bc694bf747fe52/vuejs-debugging.png" />
