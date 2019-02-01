@@ -17,11 +17,11 @@
 
 1. { CODE }
 2. "Special Features"
-  1. Compile Single File Templates (don't use "template"!)
+  - Compile Single File Templates (don't use "template"!)
     - powerful alternative to #el and template properties
-  2. Case-insensitive Component Selectors
-  3. Preprocessors and more
-  4. Side effect: Compiler removed from VueJS Package => 30% reduced Package size
+  - Case-insensitive Component Selectors
+  - Preprocessors and more
+  - Side effect: Compiler removed from VueJS Package => 30% reduced Package size
 3. Production Server
 4. User
 
@@ -42,3 +42,81 @@ Use vue-cli documentation: <a href="https://cli.vuejs.org/guide/creating-a-proje
 
 
 ### Understanding ".vue" Files
+
+**Single file templates**: special kind of file that gets compiled during the build process so we can ship compiled code to the browser.
+
+Use **render** property to overwrite element with code rendered by function (h) provided by VueJS.
+
+**h** function takes a VueJS template to be rendered.
+
+#### .vue files always follow the following structure:
+
+**The Template at the top:**
+```
+<template>
+  <div id="app">
+    <img src="./assets/logo.png">
+    <h1>{{ msg }}</h1>
+    <h2>Essential Links</h2>
+    <ul>
+      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
+      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
+      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
+      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
+    </ul>
+    <h2>Ecosystem</h2>
+    <ul>
+      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
+      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
+      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
+      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
+    </ul>
+  </div>
+</template>
+```
+
+**The script holding the VueJS code for the template (like a new instance)**
+```
+<script>
+export default {
+  name: 'app',
+  data () {
+    return {
+      msg: 'Welcome to Your Vue.js App'
+    }
+  }
+}
+</script>
+```
+
+**Any possible styling you need.**
+```
+<style>
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+
+h1, h2 {
+  font-weight: normal;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+a {
+  color: #42b983;
+}
+</style>
+```
