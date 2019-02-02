@@ -44,7 +44,7 @@ export default {
 
 ### Scoping Component Styles
 
-Just change <style></style> to <style scoped></style> to contain styles applied in a single file to the HTML template of vue page.
+Just change `<style></style>` to `<style scoped></style>` to contain styles applied in a single file to the HTML template of vue page.
 
 Imitates the shadow DOM.
 
