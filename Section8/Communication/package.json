@@ -4,7 +4,9 @@
   "description": "Communication betwen Vue Components",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server/server.js",
+    "dev": "cross-env NODE_ENV=development webpack -d --watch --progress",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "author": "Vignesh Balasundaram",
   "license": "ISC",

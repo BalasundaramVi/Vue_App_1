@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
 const parser = require('body-parser');
-const faviocon = require('serve-favicon');
+const favicon = require('serve-favicon');
 
 const app = express();
 
