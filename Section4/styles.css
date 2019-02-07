@@ -1,0 +1,111 @@
+.app {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  margin: 25px;
+}
+
+.healthbar {
+  width: 90%;
+  min-width: 400px;
+  height: 25px;
+  border: 2px solid black;
+}
+
+.healthpoints {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: green;
+  text-align: center;
+  height: 100%;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 45%;
+}
+
+.name {
+  margin: 10px;
+}
+
+.select {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid grey;
+  margin: auto;
+  width: 90%;
+  min-width: 850px;
+  max-width: 1500px;
+  box-shadow: 0px 1px 2px grey;
+}
+
+.move {
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.move:hover {
+  cursor: pointer;
+}
+
+.move:active {
+  box-shadow: 1px 1px black inset;
+}
+
+.newGame {
+  background-color: lightgreen;
+}
+
+.attack {
+  background-color: orangered;
+}
+
+.special-attack {
+  background-color: aqua;
+}
+
+.heal {
+  background-color: springgreen;
+}
+
+.game-log {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid grey;
+  margin: 10px auto;
+  width: 90%;
+  min-width: 850px;
+  max-width: 1500px;
+  box-shadow: 0px 1px 2px grey;
+  padding: 5px;
+}
+
+.move-log {
+  margin: 2px auto;
+  padding: 5px;
+  text-align: center;
+  width: 95%;
+}
+
+.player-move {
+  background-color: aquamarine;
+}
+
+.monster-move {
+  background-color: salmon;
+}
