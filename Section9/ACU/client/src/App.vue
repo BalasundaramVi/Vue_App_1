@@ -2,17 +2,28 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">
-					<h1>Hello World</h1>
+				<app-quote>
+					<h2>{{ quoteTitle }}</h2>
+					<p>A wonderful Quote</p>
+				</app-quote>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
-	export default {
-			
-	}
+import Quote from './components/Quote.vue';
+
+export default {
+		components: {
+			appQuote: Quote,
+		},
+		data: () => ({
+			quoteTitle: 'The Quote',
+		})
+}
 </script>
 
 <style>
+
 </style>
